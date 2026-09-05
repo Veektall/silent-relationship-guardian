@@ -27,6 +27,10 @@ Data stays in your browser (IndexedDB). No accounts, analytics, or backend. Each
 
 Use package.json scripts for install, dev, test, build, and preview.
 
+## Deploy
+
+Vercel free static hosting (Vite SPA via `vercel.json`). No Analytics or Speed Insights.
+
 ## Docs
 
 See docs/PRODUCT_BRIEF.md, docs/PRIVACY.md, docs/TEST_SCRIPT.md, and the Build handoff doc in docs/.
