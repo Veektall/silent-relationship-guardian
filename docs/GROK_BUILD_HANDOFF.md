@@ -47,7 +47,7 @@ Use one of these:
 
 Paste a prompt like:
 
-Import this Vite + React + TypeScript PWA and keep it as a static SPA. Repo: https://github.com/YOUR_ORG/silent-relationship-guardian
+Import this Vite + React + TypeScript PWA and keep it as a static SPA. Repo: https://github.com/Veektall/silent-relationship-guardian
 Do not add a backend. Do not enable xAI / SpaceXAI APIs. Data must stay in IndexedDB on the client.
 
 Replace the URL with the real repo when you push one.
