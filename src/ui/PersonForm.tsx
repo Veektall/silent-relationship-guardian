@@ -106,7 +106,8 @@ export function PersonForm({ initial, title, submitLabel, onSubmit, onCancel }: 
                 ['weekly', 'Weekly'],
                 ['biweekly', 'Every 2 weeks'],
                 ['monthly', 'Monthly'],
-                ['custom', 'Custom'],
+                // Custom only on edit — ship gate: presets only on first add
+                ...(initial ? ([['custom', 'Custom']] as const) : []),
               ] as const
             ).map(([value, label]) => (
               <button
@@ -123,7 +124,7 @@ export function PersonForm({ initial, title, submitLabel, onSubmit, onCancel }: 
               </button>
             ))}
           </div>
-          {preset === 'custom' ? (
+          {initial && preset === 'custom' ? (
             <label className="field nested" htmlFor={customId}>
               <span>Every how many days?</span>
               <input
