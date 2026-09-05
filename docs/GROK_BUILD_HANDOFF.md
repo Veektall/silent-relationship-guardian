@@ -106,6 +106,23 @@ This MVP does not call Grok for chat, images, or voice. Leave xAI / SpaceXAI API
 
 ---
 
+## Success bar (excellent)
+- Add 5 people + cadences in under 2 minutes
+- Log contact with **Logged** in ≤2 taps
+- Confirm a suggestion in 1 tap (Yes)
+- Dashboard readable on phone quickly
+- Works offline after first load (PWA shell)
+- Privacy story honest and short (Settings + docs/PRIVACY.md)
+
+## Out of v1 (do not add in Grok Build)
+- Message/SMS/chat scraping or notification reading
+- Cloud sync / accounts / social graph import
+- Guilt copy, streaks, social sharing
+- Push notification walls or nagging permission prompts
+- Real call/calendar sensing presented as on-by-default (demo suggestions only, labeled Practice · demo)
+
+---
+
 ## Project pointers
 
 - README.md — Dev / build / features
