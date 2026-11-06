@@ -1,4 +1,4 @@
-name: Temporary Instagram media URL resolver
+name: Temporary Instagram reel downloader
 
 on:
   push:
@@ -7,17 +7,24 @@ on:
       - ".github/workflows/resolve-instagram-reel.yml"
 
 jobs:
-  resolve:
+  retrieve:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Install yt-dlp
         run: python -m pip install --upgrade yt-dlp
-      - name: Resolve direct media URL
+      - name: Download reel
         run: |
-          echo "MEDIA_URL_START"
-          yt-dlp --no-playlist -f "best[ext=mp4]/best" -g "https://www.instagram.com/reel/DfXHXn6x9HJ/"
-          echo "MEDIA_URL_END"
+          mkdir -p out
+          yt-dlp --no-playlist --merge-output-format mp4 -o "out/instagram-reel-DfXHXn6x9HJ.%(ext)s" "https://www.instagram.com/reel/DfXHXn6x9HJ/"
+          ls -lah out
+      - name: Upload temporary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-reel-DfXHXn6x9HJ
+          path: out/*
+          retention-days: 1
+          if-no-files-found: error
